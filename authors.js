@@ -54,7 +54,10 @@ app.get ('/json/authors/:id',(req,res) =>{
     const nationality = authors[num].nationality
     const obj = {nationality, name}
     const array = JSON.stringify(obj)
-    res.send(`${array}`)
+    res.json({
+        name : name,
+        nationality : nationality
+    })
 
 })
 
